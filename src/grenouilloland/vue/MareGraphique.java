@@ -8,6 +8,7 @@ import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import grenouilloland.modele.Type;
 import grenouilloland.presentateur.Presentateur;
 
 public class MareGraphique extends JPanel{
@@ -21,13 +22,18 @@ public class MareGraphique extends JPanel{
     	final Presentateur presentateur = vue.lirePresentateur();
     	final int resolution = presentateur.resolution();
 
-	// Creation des nenuphars. 
+    	// Creation des nenuphars. 
     	nenuphars = new NenupharGraphique[resolution][resolution];
     	for (int i = 0; i < resolution; i ++) {
     		for (int j = 0; j < resolution; j ++) {
     			nenuphars[i][j] = new NenupharGraphique(this,i,j);
     		}
     	}
+    	//ajout des nenuphars immortels
+    	//nenuphars[resolution][1] = nenuphars.Type.Immortel;
+    	
+    	//creation de la grenouille et la mettre dans la position initiale.
+    	grenouille = new Grenouille(this,resolution, 1);
 	
     }
     
@@ -88,6 +94,7 @@ public class MareGraphique extends JPanel{
 	
 	protected final Vue vue;
 	protected final NenupharGraphique[][] nenuphars;
+	protected final Grenouille grenouille;
 
 	
 }

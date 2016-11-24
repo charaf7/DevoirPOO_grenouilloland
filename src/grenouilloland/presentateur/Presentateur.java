@@ -1,5 +1,6 @@
 package grenouilloland.presentateur;
 
+import grenouilloland.modele.EtatGrenouille;
 import grenouilloland.modele.Type;
 import grenouilloland.vue.Vue;
 
@@ -35,6 +36,10 @@ public class Presentateur {
 	
 	public Type type(int ligne, int colonne) {
 		//return modele.type(ligne, colonne);
+	}
+	
+	public EtatGrenouille etatGrenouille(){
+		
 	}
 	
 	public int lireResolutionMin(){

@@ -39,7 +39,7 @@ public class NenupharGraphique extends JButton implements ActionListener {
 		final Type type = presentateur.type(ligne, colonne);
 
 		// Mise a jour
-		//setBackground(types.get(etat));
+		setBackground(types.get(type));
 	}
 	
 	/**   
