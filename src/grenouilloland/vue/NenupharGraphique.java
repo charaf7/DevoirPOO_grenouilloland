@@ -17,10 +17,11 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	 /**
      * Constructeur logique.
      */
-	public NenupharGraphique(MareGraphique mareGraphique,int ligne,int colonne){
+	public NenupharGraphique(MareGraphique mareGraphique,Type type,int ligne,int colonne){
 		this.mareGraphique=mareGraphique;
 		this.ligne=ligne;
 		this.colonne=colonne;
+		this.type=type;
 		
 		//mise a jour de l'etat du nenuphar depuis celui du modele
 		mettreAJour();
@@ -36,10 +37,10 @@ public class NenupharGraphique extends JButton implements ActionListener {
 		
 		final Vue vue = mareGraphique.lireVue();
 		final Presentateur presentateur = vue.lirePresentateur();
-		final Type type = presentateur.type(ligne, colonne);
+		final Type typeP = presentateur.type(ligne, colonne);
 
 		// Mise a jour
-		setBackground(types.get(type));
+		//setBackground(types.get(typeP));
 	}
 	
 	/**   
@@ -51,7 +52,7 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	
 	final  ImageIcon eauIcone;
 	ClassLoader loader = NenupharGraphique.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/mosaique.png");
+	URL url = loader.getResource("ressources/images/mosaique.jpg");
 	eauIcone = new ImageIcon(url);
 	types.put(Type.Eau,eauIcone);
 	
@@ -106,9 +107,13 @@ public class NenupharGraphique extends JButton implements ActionListener {
 		return mareGraphique;
 	}
 	
+	public Type lireType(){
+		return type;
+	}
+	
 	
 	protected final MareGraphique mareGraphique;
 	protected final int ligne;
 	protected final int colonne;
-
+	protected final Type type;
 }
