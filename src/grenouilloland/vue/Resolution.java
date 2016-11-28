@@ -33,7 +33,7 @@ class Resolution extends JScrollBar implements AdjustmentListener {
 
     @Override
     public void adjustmentValueChanged(AdjustmentEvent evt) {
-    	vue.nouvelleMareV(getValue());
+    	vue.nouveauModele(getValue());
     }
    
     protected Vue vue;

@@ -81,10 +81,10 @@ public class Vue extends JFrame{
 
     }
     
-    protected void nouvelleMareV(int resolution) {
+    protected void nouveauModele(int resolution) {
     	
     	//nouvelle mare faite par le presentateur.
-    	presentateur.nouvelleMare(resolution);
+    	presentateur.nouveauModele(resolution);
 
     	// Suppression de l'ancienne mare.
     	remove(mareGraphique);

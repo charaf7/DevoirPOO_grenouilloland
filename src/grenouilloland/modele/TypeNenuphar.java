@@ -1,9 +1,9 @@
 package grenouilloland.modele;
 
-public enum Type {
+public enum TypeNenuphar {
+	Immortel,
 	Eau,
 	Normal,
-	Immortel,
 	Veneneux,
 	Nutritif,
 	Dopant,

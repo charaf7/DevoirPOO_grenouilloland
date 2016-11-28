@@ -3,12 +3,9 @@ package grenouilloland.vue;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.net.*;
-import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import grenouilloland.modele.Type;
 import grenouilloland.presentateur.Presentateur;
 
 public class MareGraphique extends JPanel{

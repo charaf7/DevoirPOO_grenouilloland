@@ -1,7 +1,8 @@
 package grenouilloland.presentateur;
 
 import grenouilloland.modele.EtatGrenouille;
-import grenouilloland.modele.Type;
+import grenouilloland.modele.Modele;
+import grenouilloland.modele.TypeNenuphar;
 import grenouilloland.vue.Vue;
 
 public class Presentateur {
@@ -10,8 +11,8 @@ public class Presentateur {
 		
 	}
 	
-	public void nouvelleMare(int resolution){
-		//
+	public void nouveauModele(int resolution){
+		modele = new Modele(resolution);
 	}
 	
 	public void reinitialiser(){
@@ -34,7 +35,7 @@ public class Presentateur {
 		//return modele.resolution();
 	}
 	
-	public Type type(int ligne, int colonne) {
+	public TypeNenuphar type(int ligne, int colonne) {
 		//return modele.type(ligne, colonne);
 	}
 	
@@ -53,4 +54,6 @@ public class Presentateur {
 	public int lirePoints(){
 		//
 	}
+	
+	protected Modele modele;
 }
