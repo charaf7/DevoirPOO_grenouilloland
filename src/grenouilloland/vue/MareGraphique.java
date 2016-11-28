@@ -23,11 +23,11 @@ public class MareGraphique extends JPanel{
     	nenuphars = new NenupharGraphique[resolution][resolution];
     	for (int i = 0; i < resolution; i ++) {
     		for (int j = 0; j < resolution; j ++) {
-    			nenuphars[i][j] = new NenupharGraphique(this,i,j);
+    			nenuphars[i][j] = new NenupharGraphique(this,Type.Eau,i,j);
     		}
     	}
-    	//ajout des nenuphars immortels
-    	//nenuphars[resolution][1] = nenuphars.Type.Immortel;
+    	nenupharsImmortel1 = new NenupharGraphique(this,Type.Immortel,resolution,1);
+    	nenupharsImmortel2 = new NenupharGraphique(this,Type.Immortel,1,resolution);
     	
     	//creation de la grenouille et la mettre dans la position initiale.
     	grenouille = new Grenouille(this,resolution, 1);
@@ -92,6 +92,9 @@ public class MareGraphique extends JPanel{
 	protected final Vue vue;
 	protected final NenupharGraphique[][] nenuphars;
 	protected final Grenouille grenouille;
+
+	private NenupharGraphique nenupharsImmortel1;
+	private NenupharGraphique nenupharsImmortel2;
 
 	
 }
