@@ -14,13 +14,14 @@ import grenouilloland.presentateur.Presentateur;
 
 public class NenupharGraphique extends JButton implements ActionListener {
 
-	 /**
+	/**
      * Constructeur logique.
      */
-	public NenupharGraphique(MareGraphique mareGraphique,int ligne,int colonne){
+	public NenupharGraphique(MareGraphique mareGraphique,TypeNenuphar type,int ligne,int colonne){
 		this.mareGraphique=mareGraphique;
 		this.ligne=ligne;
 		this.colonne=colonne;
+		this.type = type;
 		
 		//mise a jour de l'etat du nenuphar depuis celui du modele
 		mettreAJour();
@@ -51,7 +52,7 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	
 	final  ImageIcon eauIcone;
 	ClassLoader loader = NenupharGraphique.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/mosaique.png");
+	URL url = loader.getResource("ressources/images/mosaique.jpg");
 	eauIcone = new ImageIcon(url);
 	types.put(TypeNenuphar.Eau,eauIcone);
 	
@@ -106,9 +107,11 @@ public class NenupharGraphique extends JButton implements ActionListener {
 		return mareGraphique;
 	}
 	
-	
+	public TypeNenuphar lireTypeNenuphar(){
+		return type;
+	}
 	protected final MareGraphique mareGraphique;
 	protected final int ligne;
 	protected final int colonne;
-
+	protected TypeNenuphar type;
 }
