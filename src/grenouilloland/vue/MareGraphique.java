@@ -28,20 +28,33 @@ public class MareGraphique extends JPanel {
 
 		// Creation des nenuphars.
 		nenuphars = new NenupharGraphique[resolution][resolution];
-		for (int i = 0; i < resolution; i++) {
-			for (int j = 0; j < resolution; j++) {
-				nenuphars[i][j] = new NenupharGraphique(this, TypeNenuphar.Eau, i, j);
-			}
-		}
-		nenupharsImmortel1 = new NenupharGraphique(this, TypeNenuphar.Immortel, resolution - 1, 0);
-		nenupharsImmortel2 = new NenupharGraphique(this, TypeNenuphar.Immortel, 0, resolution - 1);
+		
+
 
 		// creation de la grenouille et la mettre dans la position initiale.
-		grenouille = new GrenouilleGraphique(this, resolution, 1);
+		grenouille = new GrenouilleGraphique(this, resolution-1, 0);
 		
-		add(grenouille);
-		add(nenupharsImmortel1);
-		add(nenupharsImmortel2);
+		presentateur.chemin();
+		
+		for (int i = 0; i < resolution; i++) {
+			for (int j = 0; j < resolution; j++) {
+				nenuphars[i][j] = new NenupharGraphique(this, presentateur.type(i, j), i, j);
+			}
+		}
+		
+		nenupharsImmortel1 = new NenupharGraphique(this, TypeNenuphar.Immortel, resolution - 1, 0);
+		nenupharsImmortel2 = new NenupharGraphique(this, TypeNenuphar.Immortel, 0, resolution - 1);
+		
+		// affiche tout les boutons, mais sans conserver le format du tableau
+		
+		for (int i = 0; i < resolution; i++) {
+			for (int j = 0; j < resolution; j++) {
+				if (grenouille.ligne == i && grenouille.colonne == j)
+					add(grenouille);
+				else
+				add(nenuphars[i][j]);
+			}
+		}
 
 	}
 
@@ -78,7 +91,7 @@ public class MareGraphique extends JPanel {
 	@Override
 	protected void paintComponent(Graphics gc) {
 		super.paintComponent(gc);
-		afficherEau(gc);
+		// afficherEau(gc);				permet de remplir le fond avec la mosaique.
 	}
 
 	/**

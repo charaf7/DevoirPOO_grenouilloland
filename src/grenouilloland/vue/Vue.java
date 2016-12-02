@@ -48,6 +48,7 @@ public class Vue extends JFrame{
     	RAndC.add(chrono,BorderLayout.PAGE_END);
     	RAndC.setPreferredSize(new Dimension(150, 75));
     	
+    	
     	// Instanciation de la mare et son implantation
     	mareGraphique = new MareGraphique(this);
     	add(mareGraphique, BorderLayout.CENTER);

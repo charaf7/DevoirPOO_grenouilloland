@@ -23,10 +23,11 @@ class Resolution extends JScrollBar implements AdjustmentListener {
 
     	
 	// Invocation du constructeur de la classe de base.
-    	super(orientation,vue.lirePresentateur().lireResolutionMin(),
+    	super(orientation,vue.lirePresentateur().lireResolution(),
 	      1,
 	      vue.lirePresentateur().lireResolutionMin(),
 	      vue.lirePresentateur().lireResolutionMax() +1);
+    	value = vue.lirePresentateur().lireResolution();
     	
 
 	// L'instance est son propre listener.
@@ -44,11 +45,18 @@ class Resolution extends JScrollBar implements AdjustmentListener {
     	return vue;
     }
 
+    /**
+     * Cree un nouveau modele uniquement si la valeur de resolution a ete changee
+     */
     @Override
     public void adjustmentValueChanged(AdjustmentEvent evt) {
-    	vue.nouveauModele(getValue());
+    	if(value!= getValue()){
+    		value = getValue();
+    	vue.nouveauModele(value);
+    	}
     }
    
+    protected int value;
     protected Vue vue;
     
 

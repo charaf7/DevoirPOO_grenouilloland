@@ -59,6 +59,12 @@ public class Presentateur {
 	public void suivante() {
 		//
 	}
+	/**
+	 * Interface pour la fonction {@link Modele#chemin()}
+	 */
+	public void chemin(){
+		modele.chemin();
+	}
 
 	/**
 	 * Fonction de déplacement de la grenouille
