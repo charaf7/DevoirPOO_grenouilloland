@@ -30,7 +30,8 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	
 	@Override
     public void actionPerformed(ActionEvent evt) {
-		mareGraphique.lireVue().changerEtatV(this);
+		mareGraphique.lireVue().lirePresentateur().Sauter(ligne,colonne);
+		//mareGraphique.lireVue().changerEtatV(this);
     }
 	
 	protected void mettreAJour() {
@@ -52,44 +53,44 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	
 	final  ImageIcon eauIcone;
 	ClassLoader loader = NenupharGraphique.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/mosaique.jpg");
+	URL url = loader.getResource("icones/mosaique.jpg");
 	eauIcone = new ImageIcon(url);
 	types.put(TypeNenuphar.Eau,eauIcone);
 	
 	final  ImageIcon normalIcone;
 	ClassLoader loader1 = NenupharGraphique.class.getClassLoader();
-	URL url1 = loader1.getResource("ressources/images/grand-nenuphare-vert-96x96.png");
+	URL url1 = loader1.getResource("icones/grand-nenuphare-vert-96x96.png");
 	normalIcone = new ImageIcon(url1);
 	types.put(TypeNenuphar.Normal,normalIcone);
    
     
     final  ImageIcon immortelIcone;
 	ClassLoader loader2 = NenupharGraphique.class.getClassLoader();
-	URL url2 = loader2.getResource("ressources/images/grand-nenuphare-vert-96x96.png");
+	URL url2 = loader2.getResource("icones/grand-nenuphare-vert-96x96.png");
 	immortelIcone = new ImageIcon(url2);
 	types.put(TypeNenuphar.Immortel,immortelIcone);
 	
 	final  ImageIcon veneneuxIcone;
 	ClassLoader loader3 = NenupharGraphique.class.getClassLoader();
-	URL url3 = loader3.getResource("ressources/images/grand-nenuphare-jaune-96x96.png");
+	URL url3 = loader3.getResource("icones/grand-nenuphare-jaune-96x96.png");
 	veneneuxIcone = new ImageIcon(url3);
 	types.put(TypeNenuphar.Veneneux,veneneuxIcone);
 	
 	final  ImageIcon nutritifIcone;
 	ClassLoader loader4 = NenupharGraphique.class.getClassLoader();
-	URL url4 = loader4.getResource("ressources/images/grand-nenuphare-rose-96x96.png");
+	URL url4 = loader4.getResource("icones/grand-nenuphare-rose-96x96.png");
 	nutritifIcone = new ImageIcon(url4);
 	types.put(TypeNenuphar.Nutritif,nutritifIcone);
 	
 	final  ImageIcon dopantIcone;
 	ClassLoader loader5 = NenupharGraphique.class.getClassLoader();
-	URL url5 = loader5.getResource("ressources/images/grand-nenuphare-rose-96x96.png");
+	URL url5 = loader5.getResource("icones/grand-nenuphare-rose-96x96.png");
 	dopantIcone = new ImageIcon(url5);
 	types.put(TypeNenuphar.Dopant,dopantIcone);
 	
 	final  ImageIcon mortelIcone;
 	ClassLoader loader6 = NenupharGraphique.class.getClassLoader();
-	URL url6 = loader6.getResource("ressources/images/grand-nenuphare-rose-96x96.png");
+	URL url6 = loader6.getResource("icones/grand-nenuphare-rose-96x96.png");
 	mortelIcone = new ImageIcon(url6);
 	types.put(TypeNenuphar.Mortel,mortelIcone);
 	

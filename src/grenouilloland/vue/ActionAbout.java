@@ -33,10 +33,12 @@ public class ActionAbout extends ActionAbstraite{
     
     protected static final String texte = "A propos ...";
     protected static final String aide = "Version et auteurs.";
-    protected static final String cheminIcone = "ressources/images/a-propos.png";
+    protected static final String cheminIcone = "icones/a-propos.png";
 
     //Icone
-    protected static final ImageIcon icone;
+    protected static final ImageIcon icone ;
+    
+    
     static {
 	ClassLoader loader = ActionAbout.class.getClassLoader();
 	URL url = loader.getResource(cheminIcone);

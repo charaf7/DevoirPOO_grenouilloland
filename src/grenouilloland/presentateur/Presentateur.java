@@ -6,8 +6,11 @@ import grenouilloland.vue.Vue;
 
 public class Presentateur {
 
-	public Presentateur(){
-		
+	public Presentateur(int resolutionMin, int resolutionMax, int resolution){
+		this.resolutionMin = resolutionMin;
+		this.resolutionMax = resolutionMax;
+		modele=new Modele(resolution);
+		vue = new Vue(this);
 	}
 	
 	public void nouveauModele(int resolution){
@@ -19,10 +22,12 @@ public class Presentateur {
 	}
 	
 	public void lancer(){
-		//
+		
+		vue.pack();
+		vue.setVisible(true);
 	}
 	
-	public void changerEtat(int ligne, int colonne){
+	public void vieillir(){
 		//
 	}
 	
@@ -30,12 +35,16 @@ public class Presentateur {
 		//
 	}
 	
-	public int resolution() {
+	public void Sauter(int ligne, int colonne) {
+		modele.Sauter(ligne, colonne);
+	}
+	
+	public int lireResolution() {
 		return modele.resolution();
 	}
 	
 	public TypeNenuphar type(int ligne, int colonne) {
-		//return modele.type(ligne, colonne);
+		return modele.nenupharAt(ligne, colonne).type();
 	}
 	
 	public boolean IsGrenouilleMalade(){
@@ -43,16 +52,36 @@ public class Presentateur {
 	}
 	
 	public int lireResolutionMin(){
-		//
+		return resolutionMin;
 	}
 	
 	public int lireResolutionMax(){
-		//
+		return resolutionMax;
 	}
 	
 	public int lirePoints(){
 		return modele.getVies();
 	}
 	
-	protected Modele modele;
+	
+    /**
+     * Resolution minimum du modele.
+     */
+    protected final int resolutionMin;
+
+    /**
+     * Resolution maximum du modele.
+     */
+    protected final int resolutionMax;
+
+    /**
+     * Instance du modele.
+     */
+    protected Modele modele;
+
+    /**
+     * Instance de la vue.
+     */
+    protected final Vue vue;
+
 }

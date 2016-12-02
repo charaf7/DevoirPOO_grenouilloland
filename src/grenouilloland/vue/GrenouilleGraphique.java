@@ -5,12 +5,11 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import grenouilloland.modele.EtatGrenouille;
 import grenouilloland.presentateur.Presentateur;
 
-public class Grenouille extends JLabel{
+public class GrenouilleGraphique extends JLabel{
 
-	public Grenouille(MareGraphique mareGraphique,int ligne,int colonne){
+	public GrenouilleGraphique(MareGraphique mareGraphique,int ligne,int colonne){
 		this.mareGraphique = mareGraphique;
 		this.ligne = ligne;
 		this.colonne = colonne;
@@ -21,12 +20,12 @@ public class Grenouille extends JLabel{
 	public void mettreAJour(){
 		final Vue vue = mareGraphique.lireVue();
 		final Presentateur presentateur = vue.lirePresentateur();
-		final EtatGrenouille etat = presentateur.etatGrenouille();
+		final boolean malade = presentateur.IsGrenouilleMalade();
 		
-		if(etat==EtatGrenouille.Sick){
+		if(malade){
 			setIcon(sickGrenouille);
 		}
-		if(etat==EtatGrenouille.Sound){
+		else{
 			setIcon(grenouille);
 		}
 	}
@@ -35,14 +34,14 @@ public class Grenouille extends JLabel{
 	public  ImageIcon grenouille;
 	{
 	ClassLoader loader = ViePoints.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/grenouille.png");
+	URL url = loader.getResource("icones/grenouille.gif");
 	grenouille = new ImageIcon(url);
 	}
 	
 	public  ImageIcon sickGrenouille;
 	{
 	ClassLoader loader = ViePoints.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/grenouille-rouge-96x57.png");
+	URL url = loader.getResource("icones/grenouille-rouge-96x57.png");
 	sickGrenouille = new ImageIcon(url);
 	}
 	

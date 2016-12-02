@@ -20,7 +20,7 @@ public class ViePoints extends JPanel{
 		
 		//placer un entier qui presente les points de vie
 		JLabel points = new JLabel();
-		points.setText( Integer.toString(presentateur.lirePoints()));
+		points.setText( Integer.toString(vue.lirePresentateur().lirePoints()));
 	}
 
 	public Vue lireVue() {
@@ -30,10 +30,9 @@ public class ViePoints extends JPanel{
 	public  ImageIcon coeur;
 	{
 	ClassLoader loader = ViePoints.class.getClassLoader();
-	URL url = loader.getResource("ressources/images/coeur.png");
+	URL url = loader.getResource("icones/coeur.png");
 	coeur = new ImageIcon(url);
 	}
 	
 	protected Vue vue;
-	protected Presentateur presentateur;
 }

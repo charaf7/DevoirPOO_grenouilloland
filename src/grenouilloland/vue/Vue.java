@@ -26,13 +26,13 @@ public class Vue extends JFrame{
     	//la barre qui contient le menu et d'outils.
     	menu();
       	   	
-    	// Instanciation de la mare et son implantation
-    	mareGraphique = new MareGraphique(this);
-    	add(mareGraphique, BorderLayout.CENTER);
-
     	// Instanciation de la barre de defilement qui controle la resolution.
     	final Resolution resolution =new Resolution(JScrollBar.HORIZONTAL, this);
     	add(resolution, BorderLayout.SOUTH);
+    	
+    	// Instanciation de la mare et son implantation
+    	mareGraphique = new MareGraphique(this);
+    	add(mareGraphique, BorderLayout.CENTER);
     	
     	//points de vie
     	final ViePoints viePoints = new ViePoints(this);
@@ -126,7 +126,7 @@ public class Vue extends JFrame{
     	final int colonne = nenuphar.lireColonne();
 
     	// Requete au presentateur pour modifier l'etat du nenuphar.
-    	presentateur.changerEtat(ligne, colonne);
+    	presentateur.vieillir();
 
     	// Mise a jour de la cellule graphique.
     	nenuphar.mettreAJour();

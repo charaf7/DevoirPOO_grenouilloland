@@ -16,8 +16,7 @@ class Resolution extends JScrollBar implements AdjustmentListener {
     public Resolution(int orientation, Vue vue) {
 
 	// Invocation du constructeur de la classe de base.
-    	super(orientation,
-	      vue.lirePresentateur().resolution(),
+    	super(orientation,vue.lirePresentateur().lireResolutionMin(),
 	      1,
 	      vue.lirePresentateur().lireResolutionMin(),
 	      vue.lirePresentateur().lireResolutionMax() +1);

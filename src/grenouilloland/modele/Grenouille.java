@@ -34,7 +34,7 @@ public class Grenouille {
 		}
 	
 	public void saute(Nenuphar nenuphar){
-		if(Math.abs(ligne-nenuphar.ligne)+ Math.abs(colonne-nenuphar.colonne)==1){
+		if(Math.abs(ligne-nenuphar.ligne)+ Math.abs(colonne-nenuphar.colonne)==1 && vies>0){
 			this.ligne = nenuphar.ligne;
 			this.colonne =nenuphar.colonne;
 			nenupharActuel=nenuphar;
