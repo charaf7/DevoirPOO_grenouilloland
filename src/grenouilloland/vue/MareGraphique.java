@@ -8,11 +8,17 @@ import javax.swing.JPanel;
 
 import grenouilloland.modele.TypeNenuphar;
 import grenouilloland.presentateur.Presentateur;
-
+/**
+ * 
+ * @author Charaf-Eddine
+ * 
+ * Representation d'une marre graphiquement, qui contient un tableau des nenuphars
+ */
 public class MareGraphique extends JPanel {
 
 	/**
-	 * Constructeur logique.
+	 * Constructeur logique
+	 * @param vue
 	 */
 	public MareGraphique(Vue vue) {
 
@@ -32,6 +38,10 @@ public class MareGraphique extends JPanel {
 
 		// creation de la grenouille et la mettre dans la position initiale.
 		grenouille = new GrenouilleGraphique(this, resolution, 1);
+		
+		add(grenouille);
+		add(nenupharsImmortel1);
+		add(nenupharsImmortel2);
 
 	}
 
@@ -85,7 +95,11 @@ public class MareGraphique extends JPanel {
 		java.net.URL url = loader.getResource(eauPicLink);
 		eauPic = (new ImageIcon(url)).getImage();
 	}
-
+	/**
+	 * Accesseur 
+	 * 
+	 * @return vue
+	 */
 	public Vue lireVue() {
 		return vue;
 	}

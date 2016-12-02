@@ -7,7 +7,20 @@ import javax.swing.JLabel;
 
 import grenouilloland.presentateur.Presentateur;
 
+/**
+ * 
+ * @author Charaf-Eddine
+ * 
+ * cette classe reprensente une grenouille 
+ */
 public class GrenouilleGraphique extends JLabel{
+	
+	/**
+	 * Constructeur logique
+	 * @param mareGraphique
+	 * @param ligne
+	 * @param colonne
+	 */
 
 	public GrenouilleGraphique(MareGraphique mareGraphique,int ligne,int colonne){
 		this.mareGraphique = mareGraphique;
@@ -17,6 +30,9 @@ public class GrenouilleGraphique extends JLabel{
 		mettreAJour();
 	}
 	
+	/**
+	 * Mettre a jour l'etat de la grenouille
+	 */
 	public void mettreAJour(){
 		final Vue vue = mareGraphique.lireVue();
 		final Presentateur presentateur = vue.lirePresentateur();
@@ -30,11 +46,13 @@ public class GrenouilleGraphique extends JLabel{
 		}
 	}
 	
-	
+	/**
+	 * Icone de cette action.
+	 */
 	public  ImageIcon grenouille;
 	{
 	ClassLoader loader = ViePoints.class.getClassLoader();
-	URL url = loader.getResource("icones/grenouille.gif");
+	URL url = loader.getResource("icones/grenouille-verte-96x57.png");
 	grenouille = new ImageIcon(url);
 	}
 	

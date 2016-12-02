@@ -5,13 +5,17 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 
 /**
- * Cette classe represente l'action : quitter l'application.
+ * 
+ * @author Charaf-Eddine
+ *
+ *Cette classe represente l'action : quitter l'application.
  */
 
 public class ActionQuit extends ActionAbstraite {
 
 	/**
-	 * Constructeur logique. prend vue comme param
+	 * Constructeur logique.
+	 * @param vue
 	 */
 
 	public ActionQuit(Vue vue) {

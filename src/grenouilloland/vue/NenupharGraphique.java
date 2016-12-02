@@ -12,17 +12,31 @@ import javax.swing.JButton;
 import grenouilloland.modele.TypeNenuphar;
 import grenouilloland.presentateur.Presentateur;
 
+/**
+ * 
+ * @author Charaf-Eddine
+ *
+ * Representation graphique d'un nenuphar.
+ */
 public class NenupharGraphique extends JButton implements ActionListener {
 
 	/**
-     * Constructeur logique.
-     */
+	 * Constructeur logique
+	 * 
+	 * @param mareGraphique
+	 * @param type
+	 * @param ligne
+	 * @param colonne
+	 */
 	public NenupharGraphique(MareGraphique mareGraphique,TypeNenuphar type,int ligne,int colonne){
 		this.mareGraphique=mareGraphique;
 		this.ligne=ligne;
 		this.colonne=colonne;
 		this.type = type;
 		
+		//l'arriere plan des bouttons s'affiche pas 
+		setContentAreaFilled(false);
+		setBorderPainted(false);
 		//mise a jour de l'etat du nenuphar depuis celui du modele
 		mettreAJour();
 		addActionListener(this);	
@@ -34,6 +48,9 @@ public class NenupharGraphique extends JButton implements ActionListener {
 		//mareGraphique.lireVue().changerEtatV(this);
     }
 	
+	/**
+	 * Mettre a jour l'etat d'un nenuphar.
+	 */
 	protected void mettreAJour() {
 		
 		final Vue vue = mareGraphique.lireVue();
@@ -95,11 +112,18 @@ public class NenupharGraphique extends JButton implements ActionListener {
 	types.put(TypeNenuphar.Mortel,mortelIcone);
 	
     }
-    
+    /**
+     * Accesseur
+     * @return la ligne
+     */
 	public int lireLigne() {
 		return ligne;
 	}
-
+	
+	/**
+	 * Accesseur
+	 * @return la colonne
+	 */
 	public int lireColonne() {
 		return colonne;
 	}

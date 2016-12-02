@@ -5,13 +5,17 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 
 /**
- * Cette classe represente l'action de lancer une partie.
+ * 
+ * @author Charaf-Eddine
+ *
+ *Cette classe represente l'action de lancer une partie.
  */
 
 public class ActionStart extends ActionAbstraite {
 
 	/**
-	 * Constructeur logique. prend vue comme param
+	 * Constructeur logique.
+	 * @param vue
 	 */
 
 	public ActionStart(Vue vue) {

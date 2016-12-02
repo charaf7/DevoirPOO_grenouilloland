@@ -5,15 +5,17 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 
 /**
- * Cette classe represente l'action de préparer une nouvelle partie.
+ * @author Charaf-Eddine
+ * 
+ *Cette classe represente l'action de préparer une nouvelle partie.
  */
 
 public class ActionNew extends ActionAbstraite{
 
 	/**
-     * Constructeur logique.
-     *prend vue comme param
-     */
+	 * Constructeur logique
+	 * @param vue
+	 */
 	
 	public ActionNew(Vue vue){
 		super(texte,icone,aide,vue);
@@ -32,7 +34,6 @@ public class ActionNew extends ActionAbstraite{
      * Icone de cette action.
      */
     protected static final ImageIcon icone;
-    
     static {
 	ClassLoader loader = ActionNew.class.getClassLoader();
 	URL url = loader.getResource(cheminIcone);

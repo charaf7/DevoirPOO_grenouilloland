@@ -1,21 +1,30 @@
 package grenouilloland.vue;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JToolBar;
 
 import grenouilloland.presentateur.Presentateur;
 
+/**
+ * lasse representant la vue.
+ * 
+ * @author Charaf-Eddine
+ *
+ */
 public class Vue extends JFrame{
 	
-
 	/**
-     * Constructeur logique.
-     */
+	 * Constructeur logique.
+	 * 
+	 * @param presentateur
+	 */
     public Vue(Presentateur presentateur) {
 
     	this.presentateur = presentateur;
@@ -25,10 +34,19 @@ public class Vue extends JFrame{
     	
     	//la barre qui contient le menu et d'outils.
     	menu();
+    	
+    	//Un JPanel qui affiche la resolution et le chronometre
+    	JPanel RAndC = new JPanel(new BorderLayout());
       	   	
     	// Instanciation de la barre de defilement qui controle la resolution.
     	final Resolution resolution =new Resolution(JScrollBar.HORIZONTAL, this);
-    	add(resolution, BorderLayout.SOUTH);
+    	//Instanciation de la barre chronometre
+    	Chronometre chrono = new Chronometre(this);
+    	
+    	//ajouter la resolution et le chronometre
+    	RAndC.add(resolution,BorderLayout.CENTER);
+    	RAndC.add(chrono,BorderLayout.PAGE_END);
+    	RAndC.setPreferredSize(new Dimension(150, 75));
     	
     	// Instanciation de la mare et son implantation
     	mareGraphique = new MareGraphique(this);
@@ -38,18 +56,20 @@ public class Vue extends JFrame{
     	final ViePoints viePoints = new ViePoints(this);
     	add(viePoints,BorderLayout.WEST);
     	
-    	//chronometre
-    	Chronometre chrono = new Chronometre(this);
-    	add(chrono,BorderLayout.SOUTH);
-
+    	//Resolution&chronometre dans le JFrame
+    	add(RAndC,BorderLayout.SOUTH);
+ 
     	// Positionnement initial de la fenetre au milieu de l'ecran.
     	setLocationRelativeTo(null);
     	
     	this.pack();
+    	this.setSize(1000,700);
 		this.setVisible(true);
 	
     }
-    
+    /**
+     * Instanciation et ajout des bouttons du menu.
+     */
     protected void menu() {
 
     	final JMenuBar barreMenus = new JMenuBar();
@@ -84,6 +104,10 @@ public class Vue extends JFrame{
 
     }
     
+    /**
+     * suppression d'une marre et mettre en place une autre.
+     * @param resolution
+     */
     protected void nouveauModele(int resolution) {
     	
     	//nouvelle mare faite par le presentateur.
