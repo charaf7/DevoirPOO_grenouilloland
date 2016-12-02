@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 				
-				Presentateur presentateur = new Presentateur(4,10,6);
+				Presentateur presentateur = new Presentateur(4,10,4);
 				
 	}
 
