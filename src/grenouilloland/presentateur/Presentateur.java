@@ -11,6 +11,7 @@ public class Presentateur {
 		this.resolutionMax = resolutionMax;
 		modele=new Modele(resolution);
 		vue = new Vue(this);
+		System.out.println(vue);
 	}
 	
 	public void nouveauModele(int resolution){

@@ -44,6 +44,9 @@ public class Vue extends JFrame{
 
     	// Positionnement initial de la fenetre au milieu de l'ecran.
     	setLocationRelativeTo(null);
+    	
+    	this.pack();
+		this.setVisible(true);
 	
     }
     
